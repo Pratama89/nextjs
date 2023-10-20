@@ -8,7 +8,7 @@ const LoginPage = () => {
     }
 
     return (
-        <div className='text-2xl font-bold text-center mt-5'>
+        <div className='flex justify-center flex-col text-2xl font-bold text-center container mx-auto  border border-red-600'>
             <h1>Selamat Datang Di Login</h1>
             <p>
             Belum Punya Akun? <Link href={'/auth/register'}className="underline text-blue-500">Daftar</Link>
