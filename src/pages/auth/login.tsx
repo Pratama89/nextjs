@@ -1,3 +1,4 @@
+import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
@@ -8,7 +9,8 @@ const LoginPage = () => {
     }
 
     return (
-        <div className='flex justify-center flex-col text-2xl font-bold text-center container mx-auto  border border-red-600'>
+        <div className='flex justify-center flex-col align-middle text-2xl font-bold text-center  h-screen'>
+            <Head>Login</Head>
             <h1>Selamat Datang Di Login</h1>
             <p>
             Belum Punya Akun? <Link href={'/auth/register'}className="underline text-blue-500">Daftar</Link>
