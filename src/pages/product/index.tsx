@@ -6,7 +6,6 @@ import { useEffect, useState } from "react"
 const ProductPage = () => {
     const [isLogin, setIsLogin] = useState(true)
     const [products, setProducts] = useState([])
-    console.log(products)
     const { push } = useRouter();
     
     useEffect(() => {
@@ -24,7 +23,9 @@ const ProductPage = () => {
     }, []);
 
     return (
-       <ProductView products={products}/>
+        <div className="">
+            <ProductView products={products}/>
+        </div>
     )
 }
 
