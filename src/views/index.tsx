@@ -5,22 +5,21 @@ import Image from "next/image"
 
 const ProductView = ({ products }: { products: ProductType[] }) => {
     return (
-    <div className='w-screen h-96 p-5 mb-5  '> 
-        <h1 className="text-2xl font-bold mt-5 text-center">Product</h1>
-        <div className="flex justify-center mt-5 border border-red-600  bg-red-500 min-h-cover"> 
-            <div className="px-8 mx-5 container border border-red-500">
-                KOTAK
-            </div>
-            {/* {products.map((product: ProductType) => (
-                <div key={product.id} className="px-8 mr-5">
-                    <div className="rounded-md w-40 h-40">
-                        <img src={product.image} alt={product.name}  />
+    <div className='w-full p-5 mb-5'> 
+        <h1 className="text-2xl font-bold mt-5 text-center  ">Product</h1>
+        <div className="flex w-screen mt-5 border border-red-600 min-h-cover relative"> 
+            
+            {products.map((product: ProductType) => (
+                <div key={product.id} className="grid grid-cols-3 gap-3 items-center  border border-red-600 justify-center w-full">
+                    <div className="rounded-md mt-5 mb-5">
+                        <img src={product.image} alt={product.name} width={300} />
                     </div>
-                    <h4 className="mt-5 font-bold text-xl">{product.name}</h4>
-                    <p className="">Harga: {product.price.toLocaleString("id-ID", { style: "currency", currency: "IDR" })}</p>
+                    <h4 className="mt-5 font-bold text-2xl">{product.name}</h4>
+                    <p className="font-bold mt-5">Harga: {product.price.toLocaleString("id-ID", { style: "currency", currency: "IDR" })}</p>
                     <p className="mb-">Stok: {product.stock}</p>
                 </div>
-            ))} */}
+            ))}
+
         </div>
     </div>
 
