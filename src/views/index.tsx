@@ -7,11 +7,11 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
     return (
     <div className='w-full p-5 mb-5'> 
         <h1 className="text-2xl font-bold mt-5 text-center  ">Product</h1>
-        <div className="container mx-auto px-6 mt-5 md:flex md:flex-wrap md:items-center overflow-hidden"> 
+        <div className="flex flex-wrap mx-auto px-6 mt-5 mb-5 md:items-center overflow-hidden"> 
             
             {products.map((product: ProductType) => (
-              <div key={product.id} className="rounded-md overflow-hidden mb-5 md:w-60 border border-red-600">
-                <img src={product.image} alt={product.name} className="w-64" />
+              <div key={product.id} className="rounded-md  mb-5 lg:w-60 border border-red-600">
+                <img src={product.image} alt={product.name} className="w-full h-64" />
                 <div className="px-6 py-4">
                   <h4 className="mt-5 font-bold text-2xl">{product.name}</h4>
                   <p className="font-bold mt-5">Harga: {product.price.toLocaleString("id-ID", { style: "currency", currency: "IDR" })}</p>
