@@ -23,7 +23,7 @@ const ProductPage = () => {
     }, []);
 
     return (
-        <div className="border border-red-600 overflow-hidden">
+        <div className="border border-red-600">
             <ProductView products={products}/>
         </div>
     )
