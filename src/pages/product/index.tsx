@@ -5,9 +5,6 @@ import useSWR from "swr";
 import { fetcher } from "@/lib/swr/fetcher";
 
 
-
-
-
 const ProductPage = () => {
     const [isLogin, setIsLogin] = useState(true)
     const [products, setProducts] = useState([])
@@ -37,7 +34,7 @@ const ProductPage = () => {
     // }, []);
 
     return (
-        <div className="border border-red-600">
+        <div className="">
             <ProductView products={isLoading ? [] : data.data}/>
         </div>
     )
