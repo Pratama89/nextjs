@@ -2,7 +2,7 @@ import { ProductType } from "@/types/product.type"
 import ProductView from "@/views"
 
 const ProductPage = (props: { products: ProductType[] }) => {
-    const { products } = props    
+    const { products } = props;
     return (
         <div>
             <ProductView products={products} />
@@ -20,7 +20,7 @@ export async function getStaticProps() {
 
     return {
         props: {
-            products: response.data
+            products: response.data,
         }
     }
 }
