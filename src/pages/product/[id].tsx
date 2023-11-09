@@ -4,7 +4,7 @@ import useSWR from "swr";
 import DetailProduct from "../detail_product";
 import { ProductType } from "@/types/product.type";
 
-const DetailProductPage = ( {product}: {product: ProductType }) => {
+const DetailProductPage = ( {product}: {product: ProductType}) => {
     const { query } = useRouter()
 
     // const { data, error, isLoading } = useSWR(
@@ -18,8 +18,8 @@ const DetailProductPage = ( {product}: {product: ProductType }) => {
         <div className='text-2xl font-bold text-center mt-5'>
             {/* clientsite */}
             <div className="flex flex-col items-center">
-            {/* <DetailProduct product={isLoading ? [] : data.data}/> */}
-            {/* Server Site */}
+            {/* <DetailProduct product={isLoading ? {} : data.data}/> */}
+            {/* Server Site  & Static Site */}
             <DetailProduct product={product} />
             </div>
         </div>
@@ -50,7 +50,20 @@ export default DetailProductPage
 export async function getStaticPaths() {
     const res = await fetch('http://localhost:3000/api/product');
     const response = await res.json();
+
+    const paths = response.data.map((product: ProductType) => ({
+        params: {
+            id: product.id.toString(),
+        },
+    }));
+
+    return {
+        paths,
+        fallback: false,
+    };
+
 }
+
 
 export async function getStaticProps({ 
     params, 
