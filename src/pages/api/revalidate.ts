@@ -2,17 +2,22 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  revalidate: boolean;
+  revalidated: boolean;
+  message?: string;
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  try {
-    await res.revalidate('/product/static');
-    return res.json({ revalidate: true });
-  } catch (err) {
-    return res.status(500).send(err);
+  console.log(req.query.data);
+  if (req.query.data === "product") {
+    try {
+      await res.revalidate('/product/static');
+      return res.json({ revalidated: true });
+    } catch (error) {
+      return res.status(500).send({revalidated: false});
+    }
   }
+  return res.json({ revalidated: false, message: 'Invalid data' });
 }
