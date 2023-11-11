@@ -24,7 +24,7 @@ const authOption: NextAuthOptions = {
                };
                const user: any = { id: "1", email: email, password: password, fullname: fullname};
                if (user) {
-                console.log(user);
+                // console.log(user);
                    return user;
                } else {
                    return null;
@@ -33,18 +33,22 @@ const authOption: NextAuthOptions = {
         })
     ],
     callbacks: {
-        jwt({token, account, profile, user}){
+        jwt({token, account, profile, user}: any){
             if (account?.provider === "credentials") {
                 token.email = user.email;
+                token.fullname = user.fullname;
             }
-            console.log(token);
+            // console.log(token);
             return token;
         },
         async session({session, token}: any){
             if ("email" in token) {
                 session.user.email = token.email
             }
-            console.log(session, token);
+            if ("fullname" in token) {
+                session.user.fullname = token.fullname
+            }
+            // console.log(session, token);
             return session;
         },
     },
