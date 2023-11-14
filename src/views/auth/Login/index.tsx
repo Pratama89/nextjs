@@ -84,10 +84,14 @@ const LoginView = () => {
                 </button>
               </div>
 
-              <p className="mb-5">
+              <p className="mb-5 mt-5">
                 Belum Punya Akun? <Link href={'/auth/register'} className="underline text-blue-500 ">Daftar</Link>
               </p>
+              <div className="mb-5">
+                <Link href={'/'} className="text-sm text-blue-500 ">Pharmadent</Link>
+              </div>
             </div>
+            
         </div>
     )
 }

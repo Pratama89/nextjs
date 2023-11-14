@@ -18,7 +18,8 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
               href={`/product/${product.id}`}
               key={product.id} 
               className="flex flex-col items-start rounded-lg mt-3 mb-3 lg:w-60 w-36 border bg-white  mx-2 ">
-                <img src={product.image} alt={product.name} className=" w-36 h-36 lg:w-60 lg:h-60 rounded-lg shadow-lg " />
+                {/* <img src={product.image} alt={product.name} className=" w-36 h-36 lg:w-60 lg:h-60 rounded-lg shadow-lg " /> */}
+                <Image src={product.image} alt={product.name} width={300} height={300} className=" w-36 h-36 lg:w-60 lg:h-60 rounded-lg shadow-lg " />
                   <div className="px-2 py-2 ">
                     <h4 className="font-bold text-xs md:text-xs lg:text-lg">{product.name}</h4>
                     <p className="font-bold text-xs md:text-xs lg:text-lg">{product.price.toLocaleString("id-ID", { style: "currency", currency: "IDR" })}</p>

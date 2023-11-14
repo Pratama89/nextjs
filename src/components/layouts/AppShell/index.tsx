@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import Navbar from "../Navbar"
+import Menu from "../Menu"
 
 
 type AppSheelProps = {
@@ -14,6 +15,7 @@ const AppShell = (props: AppSheelProps) => {
     return (
         <main>
             {!disableNavbar.includes(pathname) && <Navbar />}
+            <Menu />
             {children}
         </main>
     )

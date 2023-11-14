@@ -14,6 +14,7 @@ function Navbar() {
                 </Link>
                 </div>
             <div className="flex justify-between items-center mx-2 gap-3">
+                <Link href={'/profile'}>
                 {data && data.user.image && (
                     <img 
                       src={data.user.image} 
@@ -22,10 +23,11 @@ function Navbar() {
                       alt={data.user.fullname} 
                       className=" rounded-full"
                     />
-                )}                
+                )}
+                </Link>                
                 <div className="animate-none">
                     <Link href={'/profile'}>
-                        {data && data.user.fullname}{" "}
+                        {data && data.user.name}{" "}
                     </Link>
                 </div>               
             
