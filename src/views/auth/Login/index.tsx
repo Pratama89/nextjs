@@ -74,6 +74,16 @@ const LoginView = () => {
                   </button>
                 </div>
               </form>
+               <div className="mx-4">
+                <button onClick={() => signIn('google', { 
+                    callbackUrl,
+                    redirect: false
+                   })} 
+                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg w-full mt-2">
+                  Sign in with Google
+                </button>
+              </div>
+
               <p className="mb-5">
                 Belum Punya Akun? <Link href={'/auth/register'} className="underline text-blue-500 ">Daftar</Link>
               </p>

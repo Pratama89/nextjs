@@ -20,7 +20,6 @@ export default function withAuth(
             }
             if(token.role !== 'admin' && onlyAdmin.includes(pathname)) {
                 return NextResponse.redirect(new URL('/', req.url));
-                
             }
         }
         return middleware(req, next);            
