@@ -29,7 +29,7 @@ function Navbar() {
                 </Link>                
                 <div className="animate-none">
                     <Link href={'/profile'}>
-                        {data && data.user.name}{" "}
+                        {data && data.user.fullname}{" "}
                     </Link>
                 </div>               
             
