@@ -31,8 +31,8 @@ const ProductPage = () => {
     // }, []);
 
     return (
-        <div className="">
-            <ProductView products={isLoading ? [] : data.data}/>
+        <div className="" >
+            <ProductView products={isLoading ? [] : data?.data} />
         </div>
     )
 }

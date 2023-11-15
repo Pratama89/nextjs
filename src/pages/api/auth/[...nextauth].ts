@@ -56,8 +56,8 @@ const authOption: NextAuthOptions = {
                     
                 };
                 
-                await signInWithGoogle(data, (result:any) => {
-                    if (result.true) {
+                await signInWithGoogle(data, (result: {status: boolean; data: any; message: string}) => {
+                    if (result.status) {
                         token.email = result.data.email;
                         token.fullname = result.data.fullname;
                         token.type = result.data.type

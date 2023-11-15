@@ -11,9 +11,9 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
       <div className='w-full p-5 mb-5'> 
         <h1 className="text-2xl font-bold mt-5 text-center  ">Product</h1>
           <div className="flex flex-wrap mx-auto lg:px-6 px-2 justify-evenly lg:justify-start md:justify-start mt-5 mb-5 border bg-slate-100 rounded-lg overflow-hidden"> 
-          {products.length > 0 ? (
+          {products?.length > 0 ? (
             <>
-              {products.map((product: ProductType) => (              
+              {products?.map((product: ProductType) => (              
               <Link 
               href={`/product/${product.id}`}
               key={product.id} 
